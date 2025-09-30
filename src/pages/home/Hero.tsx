@@ -18,12 +18,12 @@ const Hero: React.FC = () => {
           Verify users in seconds with cutting-edge face liveliness detection.
           Secure • Fast • Reliable
         </p>
-        <Button variant="light" size="lg" className="me-3 shadow">
+        <a className="shadow btn btn-lg me-3 btn-light" href={"/demo"}>
           Try Demo
-        </Button>
-        <Button variant="outline-light" size="lg" className="shadow">
+        </a>
+        <a className="shadow btn btn-lg btn-outline-light" href={"/pricing"}>
           View Pricing
-        </Button>
+        </a>
       </Container>
     </section>
   );

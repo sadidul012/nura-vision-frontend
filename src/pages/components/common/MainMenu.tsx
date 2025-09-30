@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import logo from '../../../logo.svg';
-import {Navbar as BSNavbar, Nav, Container, Button} from 'react-bootstrap';
+import {Navbar as BSNavbar, Nav, Container} from 'react-bootstrap';
 
 const MainMenu: React.FC = () => {
     return (
@@ -18,7 +18,7 @@ const MainMenu: React.FC = () => {
                         <Nav.Link as={Link} to="/features">Features</Nav.Link>
                         <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                        <Button variant="outline-light" className="ms-2">Get Started</Button>
+                        <a className="ms-2 btn btn-outline-info" href={"/pricing"} >Get Started</a>
                     </Nav>
                 </BSNavbar.Collapse>
             </Container>
