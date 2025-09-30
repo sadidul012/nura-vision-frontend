@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/common/Navbar';
+import MainMenu from '../components/common/MainMenu';
 import Hero from './Hero';
 import Features from './Features';
 import Footer from '../components/common/Footer';
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
     return (
         <>
             <div className="app-content">
-                <Navbar/>
+                <MainMenu/>
                 <Hero/>
                 <Features/>
                 <HowItWorks/>

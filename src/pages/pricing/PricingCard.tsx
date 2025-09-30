@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Card, Col, Row} from "react-bootstrap";
+import PricingToggle from "./PricingToggle";
 
 const PricingCard: React.FC = () => {
+    const [yearly, setYearly] = useState(false);
+
     const plans = [
         {
             title: "Free",
@@ -12,7 +15,7 @@ const PricingCard: React.FC = () => {
         },
         {
             title: "Pro",
-            price: "$49/mo",
+            price: yearly ? "480/year" : "49/mo",
             features: ["10k API calls", "Email support"],
             button: "Subscribe",
             highlight: true
@@ -27,6 +30,8 @@ const PricingCard: React.FC = () => {
     ];
     return (
         <>
+            <PricingToggle yearly={yearly} setYearly={setYearly}/>
+
             <Row className="justify-content-center">
                 {plans.map((plan, idx) => (
                     <Col md={4} className="mb-4" key={idx}>

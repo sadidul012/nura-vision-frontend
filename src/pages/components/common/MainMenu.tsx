@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import logo from '../../../logo.svg';
 import {Navbar as BSNavbar, Nav, Container, Button} from 'react-bootstrap';
 
-const Navbar: React.FC = () => {
+const MainMenu: React.FC = () => {
     return (
         <BSNavbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -26,4 +26,4 @@ const Navbar: React.FC = () => {
     );
 };
 
-export default Navbar;
+export default MainMenu;

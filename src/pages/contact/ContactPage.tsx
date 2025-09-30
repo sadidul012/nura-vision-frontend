@@ -1,14 +1,14 @@
 import React from "react";
 import ContactHeader from "./ContactHeader";
 import ContactForm from "./ContactForm";
-import Navbar from "../components/common/Navbar";
+import MainMenu from "../components/common/MainMenu";
 import Footer from "../components/common/Footer";
 
 const ContactPage: React.FC = () => {
     return (
         <>
             <div className="app-content">
-                <Navbar/>
+                <MainMenu/>
                 <div className="container py-5">
                     <ContactHeader/>
                     <div className="row justify-content-center">
