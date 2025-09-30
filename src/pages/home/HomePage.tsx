@@ -3,6 +3,10 @@ import Navbar from '../components/common/Navbar';
 import Hero from './Hero';
 import Features from './Features';
 import Footer from '../components/common/Footer';
+import HowItWorks from "./HowItWorks";
+import UseCases from "./UseCases";
+import Contact from "./Contact";
+import Pricing from "./Pricing";
 
 const HomePage: React.FC = () => {
     return (
@@ -11,6 +15,10 @@ const HomePage: React.FC = () => {
                 <Navbar/>
                 <Hero/>
                 <Features/>
+                <HowItWorks/>
+                <UseCases/>
+                <Pricing/>
+                <Contact/>
             </div>
             <Footer/>
         </>
