@@ -1,9 +1,10 @@
 import React from "react";
 import PricingHeader from "./PricingHeader";
-import ExtraInfo from "./ExtraInfo";
+import WhyChooseUs from "./WhyChooseUs";
 import Footer from "../components/common/Footer";
 import PricingCard from "./PricingCard";
 import MainMenu from "../components/common/MainMenu";
+import FAQ from "./FAQ";
 
 const PricingPage: React.FC = () => {
     return (
@@ -13,7 +14,8 @@ const PricingPage: React.FC = () => {
                 <PricingHeader/>
                 <div className="container py-5">
                     <PricingCard/>
-                    <ExtraInfo/>
+                    <WhyChooseUs/>
+                    <FAQ/>
                 </div>
             </div>
             <Footer/>
