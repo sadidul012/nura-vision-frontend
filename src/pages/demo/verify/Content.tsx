@@ -1,5 +1,5 @@
-import React from "react";
-import {FaCheckCircle, FaIdCard, FaLock} from "react-icons/fa";
+import React, {useState} from "react";
+import {FaCheckCircle, FaIdCard, FaLock, FaTimesCircle, FaSpinner} from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Content: React.FC = () => {
@@ -8,7 +8,25 @@ const Content: React.FC = () => {
     // @ts-ignore
     const circle = <FaCheckCircle className="text-success me-2"/>
     // @ts-ignore
+    const timesCircle = <FaTimesCircle/>
+    // @ts-ignore
+    const spinner = <FaSpinner className="spin"/>
+    // @ts-ignore
     const lock = <FaLock className="me-2"/>
+
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "failed">("idle");
+
+    const handleVerify = (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        // simulate API call (replace with your actual verification API)
+        setTimeout(() => {
+            const isSuccess = Math.random() > 0.5; // randomly success/fail
+            setStatus(isSuccess ? "success" : "failed");
+        }, 2000);
+    };
+
     return (
         <div className="container d-flex align-items-center justify-content-center min-vh-100">
             <div className="card shadow-lg p-4 border-0 rounded-4" style={{maxWidth: "600px", width: "100%"}}>
@@ -38,15 +56,35 @@ const Content: React.FC = () => {
                     </ul>
                 </div>
 
-                {/* Verification Form */}
-                <form>
+                {status === "success" && (
+                    <div
+                        className="alert alert-success text-center d-flex align-items-center justify-content-center gap-2">
+                        {circle} Verification Successful 🎉
+                    </div>
+                )}
+                {status === "failed" && (
+                    <div
+                        className="alert alert-danger text-center d-flex align-items-center justify-content-center gap-2">
+                        {timesCircle} Verification Failed. Please try again.
+                    </div>
+                )}
+                {status === "loading" && (
+                    <div
+                        className="alert alert-info text-center d-flex align-items-center justify-content-center gap-2">
+                        {spinner} Verifying...
+                    </div>
+                )}
+
+                <form onSubmit={handleVerify}>
+
                     <div className="mb-3">
                         <label className="form-label fw-semibold">Take a Selfie</label>
                         <input type="file" accept="image/*" capture="user" className="form-control"/>
                     </div>
 
-                    <button className="btn btn-primary w-100 py-2 fw-bold rounded-3">
-                        {lock} Verify Now
+                    <button className="btn btn-primary w-100 py-2 fw-bold rounded-3" disabled={status === "loading"}
+                            type="submit">
+                        {lock} {status === "loading" ? "Verifying..." : "Verify Now"}
                     </button>
                 </form>
 

@@ -1,13 +1,33 @@
-import {FaCheckCircle, FaUserPlus} from "react-icons/fa";
-import React from "react";
+import {FaCheckCircle, FaSpinner, FaTimesCircle, FaUserPlus} from "react-icons/fa";
+import React, {useState} from "react";
 
 export default function Content() {
+
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "failed">("idle");
+
     // @ts-ignore
     const EnrollIcon = <FaUserPlus/>;
     // @ts-ignore
-    const EnrollIconHeader = <FaUserPlus  size={60} className="text-primary mb-3"/>;
+    const EnrollIconHeader = <FaUserPlus size={60} className="text-primary mb-3"/>;
     // @ts-ignore
     const circle = <FaCheckCircle className="text-success me-2"/>
+    // @ts-ignore
+    const timesCircle = <FaTimesCircle/>
+    // @ts-ignore
+    const spinner = <FaSpinner className="spin"/>
+
+
+    const handleVerify = (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        // simulate API call (replace with your actual verification API)
+        setTimeout(() => {
+            const isSuccess = Math.random() > 0.5; // randomly success/fail
+            setStatus(isSuccess ? "success" : "failed");
+        }, 2000);
+    };
+
     return (
         <div className="container d-flex align-items-center justify-content-center min-vh-100">
             <div className="card shadow-lg p-4 border-0 rounded-4" style={{maxWidth: "600px", width: "100%"}}>
@@ -38,8 +58,29 @@ export default function Content() {
                     </ul>
                 </div>
 
+                {status === "success" && (
+                    <div
+                        className="alert alert-success text-center d-flex align-items-center justify-content-center gap-2">
+                        {circle} Enrollment Successful 🎉. <a href="/demo/verify" className="text-decoration-none fw-semibold">
+                            Go to Verify
+                        </a>
+                    </div>
+                )}
+                {status === "failed" && (
+                    <div
+                        className="alert alert-danger text-center d-flex align-items-center justify-content-center gap-2">
+                        {timesCircle} Enrollment Failed. Please try again.
+                    </div>
+                )}
+                {status === "loading" && (
+                    <div
+                        className="alert alert-info text-center d-flex align-items-center justify-content-center gap-2">
+                        {spinner} Enrolling...
+                    </div>
+                )}
+
                 {/* Verification Form */}
-                <form>
+                <form onSubmit={handleVerify}>
                     <div className="mb-3">
                         <label className="form-label">Full Name</label>
                         <input type="text" className="form-control" placeholder="Enter your full name"/>
@@ -55,8 +96,9 @@ export default function Content() {
                         <input type="file" className="form-control" accept="image/*"/>
                     </div>
 
-                    <button type="submit" className="btn btn-primary w-100 py-2 fw-bold">
-                        {EnrollIcon} Enroll Now
+                    <button type="submit" className="btn btn-primary w-100 py-2 fw-bold"
+                            disabled={status === "loading"}>
+                        {EnrollIcon} {status === "loading" ? "Enrolling..." : "Enroll Now"}
                     </button>
                 </form>
 
