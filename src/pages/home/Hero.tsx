@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
     <section
       className="d-flex align-items-center text-center text-light"
       style={{
-        minHeight: "90vh",
+        minHeight: "50vh",
         background: "linear-gradient(135deg, #007bff, #6610f2)",
       }}
     >
