@@ -116,50 +116,5 @@ export default function Content() {
                 </div>
             </div>
         </div>
-        // <div className="d-flex align-items-center justify-content-center mt-5 bg-gradient">
-        //     <div className="card shadow-lg border-0 rounded-4" style={{maxWidth: "500px", width: "100%"}}>
-        //         <div className="card-header text-center bg-primary text-white py-4 rounded-top-4">
-        //             <h3 className="mb-0 d-flex justify-content-center align-items-center gap-2">
-        //                 {EnrollIcon} Enroll for Liveliness Check
-        //             </h3>
-        //         </div>
-        //
-        //         <div className="card-body p-4">
-        //             <p className="text-muted text-center mb-4">
-        //                 Please fill in your details and upload your photo to complete enrollment.
-        //             </p>
-        //
-        //             <form>
-        //                 <div className="mb-3">
-        //                     <label className="form-label">Full Name</label>
-        //                     <input type="text" className="form-control" placeholder="Enter your full name"/>
-        //                 </div>
-        //
-        //                 <div className="mb-3">
-        //                     <label className="form-label">Email Address</label>
-        //                     <input type="email" className="form-control" placeholder="Enter your email"/>
-        //                 </div>
-        //
-        //                 <div className="mb-4">
-        //                     <label className="form-label">Upload Photo</label>
-        //                     <input type="file" className="form-control" accept="image/*"/>
-        //                 </div>
-        //
-        //                 <button type="submit" className="btn btn-primary w-100 py-2 fw-bold">
-        //                     Enroll Now
-        //                 </button>
-        //             </form>
-        //
-        //             <div className="text-center mt-3">
-        //                 <small className="text-muted">
-        //                     Already enrolled?{" "}
-        //                     <a href="/demo/verify" className="text-decoration-none fw-semibold">
-        //                         Go to Verify
-        //                     </a>
-        //                 </small>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
     );
 }
