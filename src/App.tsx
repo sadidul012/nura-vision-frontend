@@ -6,20 +6,18 @@ import HomePage from "./pages/home/HomePage";
 import PricingPage from "./pages/pricing/PricingPage";
 import ContactPage from "./pages/contact/ContactPage";
 import FeaturesPage from "./pages/features/FeaturesPage";
+import DemoPage from "./pages/demo/DemoPage";
 
 function App() {
     return (
         <Router>
             <div className="app-wrapper">
-                {/*<HomePage />*/}
-                {/*<PricingPage/>*/}
-                {/*<ContactPage/>*/}
-                {/*<FeaturesPage/>*/}
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
                     <Route path="/features" element={<FeaturesPage/>}/>
                     <Route path="/pricing" element={<PricingPage/>}/>
                     <Route path="/contact" element={<ContactPage/>}/>
+                    <Route path="/demo" element={<DemoPage/>}/>
                 </Routes>
             </div>
         </Router>
