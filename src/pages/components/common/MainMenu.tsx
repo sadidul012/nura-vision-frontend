@@ -22,7 +22,7 @@ const MainMenu: React.FC = () => {
                         <a className="ms-2 btn btn-outline-light" href={"/demo"}>
                             Try Demo
                         </a>
-                        <a className="ms-2 btn btn-outline-info" href={"/pricing"}>
+                        <a className="ms-2 btn btn-outline-info" href={"/register"}>
                             Get Started
                         </a>
                     </Nav>

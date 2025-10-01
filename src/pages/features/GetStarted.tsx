@@ -10,7 +10,7 @@ const GetStarted: React.FC = () => {
                     <p className="mb-4">
                         Start verifying real users today with our simple and secure API.
                     </p>
-                    <a href="/pricing" className="btn btn-light btn-lg px-4 rounded-pill shadow-sm">
+                    <a href="/register" className="btn btn-light btn-lg px-4 rounded-pill shadow-sm">
                         Get Started
                     </a>
                 </Container>

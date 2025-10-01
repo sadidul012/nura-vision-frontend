@@ -8,6 +8,8 @@ import FeaturesPage from "./pages/features/FeaturesPage";
 import DemoPage from "./pages/demo/DemoPage";
 import EnrollPage from "./pages/demo/enroll/EnrollPage";
 import VerifyPage from "./pages/demo/verify/VerifyPage";
+import LoginPage from "./pages/login/LoginPage";
+import RegisterPage from "./pages/register/RegisterPage";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/demo" element={<DemoPage/>}/>
                     <Route path="/demo/enroll" element={<EnrollPage/>}/>
                     <Route path="/demo/verify" element={<VerifyPage/>}/>
+                    <Route path="/login" element={<LoginPage/>}/>
+                    <Route path="/register" element={<RegisterPage/>}/>
                 </Routes>
             </div>
         </Router>

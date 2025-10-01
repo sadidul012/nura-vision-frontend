@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
                                 fight fraud, and integrate seamlessly with your app.
                             </p>
                             <a
-                                href="/pricing"
+                                href="/register"
                                 className="btn btn-light btn-lg px-4 rounded-pill shadow-sm"
                             >
                                 Get Started
