@@ -18,7 +18,13 @@ const MainMenu: React.FC = () => {
                         <Nav.Link as={Link} to="/features">Features</Nav.Link>
                         <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                        <a className="ms-2 btn btn-outline-info" href={"/pricing"} >Get Started</a>
+
+                        <a className="ms-2 btn btn-outline-light" href={"/demo"}>
+                            Try Demo
+                        </a>
+                        <a className="ms-2 btn btn-outline-info" href={"/pricing"}>
+                            Get Started
+                        </a>
                     </Nav>
                 </BSNavbar.Collapse>
             </Container>
