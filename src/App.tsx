@@ -10,6 +10,7 @@ import EnrollPage from "./pages/demo/enroll/EnrollPage";
 import VerifyPage from "./pages/demo/verify/VerifyPage";
 import LoginPage from "./pages/login/LoginPage";
 import RegisterPage from "./pages/register/RegisterPage";
+import DashboardPage from "./pages/dashboard/DashboardPage";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/demo/verify" element={<VerifyPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/register" element={<RegisterPage/>}/>
+                    <Route path="/dashboard" element={<DashboardPage/>}/>
                 </Routes>
             </div>
         </Router>
