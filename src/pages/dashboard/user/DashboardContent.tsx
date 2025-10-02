@@ -1,6 +1,6 @@
 import React from "react";
-import {Container, Row, Col, Card, Table, Button, ProgressBar} from "react-bootstrap";
-import {FaKey, FaDollarSign, FaChartBar} from "react-icons/fa";
+import {Container, Row, Col, Card, ProgressBar} from "react-bootstrap";
+import {FaDollarSign, FaChartBar} from "react-icons/fa";
 import {Line} from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -13,6 +13,7 @@ import {
     Legend,
     ArcElement,
 } from "chart.js";
+import APIKeyTable from "./APIKeyTable";
 
 // Register required components
 ChartJS.register(
@@ -98,56 +99,10 @@ const UserDashboardContent: React.FC = () => {
             </Row>
 
             {/* API Keys Table */}
-            <Row className="mb-4">
-                <Col>
-                    <Card className="shadow-sm">
-                        <Card.Header className="d-flex justify-content-between align-items-center">
-                            <h5 className="mb-0">
-                                {
-                                    // @ts-ignore
-                                    <FaKey className="me-2"/>
-                                }
-                                Your API Keys
-                            </h5>
-                            <Button variant="primary" size="sm">Generate New Key</Button>
-                        </Card.Header>
-                        <Card.Body>
-                            <Table striped bordered hover responsive>
-                                <thead>
-                                <tr>
-                                    <th>API Key</th>
-                                    <th>Status</th>
-                                    <th>Created</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>sk_live_1234567890abcdef</td>
-                                    <td><span className="badge bg-success">Active</span></td>
-                                    <td>2025-09-20</td>
-                                    <td>
-                                        <Button size="sm" variant="outline-secondary" className="me-2">Copy</Button>
-                                        <Button size="sm" variant="outline-danger">Revoke</Button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>sk_test_abcdef1234567890</td>
-                                    <td><span className="badge bg-warning text-dark">Limited</span></td>
-                                    <td>2025-08-10</td>
-                                    <td>
-                                        <Button size="sm" variant="outline-secondary" className="me-2">Copy</Button>
-                                        <Button size="sm" variant="outline-danger">Revoke</Button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </Table>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
+            <APIKeyTable />
 
-            {/* Usage Chart */}
+            {/* Usage Chart */
+            }
             <Row>
                 <Col>
                     <Card className="shadow-sm">
@@ -159,7 +114,8 @@ const UserDashboardContent: React.FC = () => {
                 </Col>
             </Row>
         </Container>
-    );
+    )
+        ;
 };
 
 export default UserDashboardContent;
