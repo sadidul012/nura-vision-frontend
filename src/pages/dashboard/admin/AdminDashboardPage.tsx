@@ -1,9 +1,9 @@
 import React from "react";
-import MainMenu from "../components/common/MainMenu";
-import Footer from "../components/common/Footer";
+import MainMenu from "../../components/common/MainMenu";
+import Footer from "../../components/common/Footer";
 import DashboardContent from "./DashboardContent";
 
-const DashboardPage: React.FC = () => {
+const AdminDashboardPage: React.FC = () => {
     return (
         <>
             <div className="app-content">
@@ -15,4 +15,4 @@ const DashboardPage: React.FC = () => {
     );
 };
 
-export default DashboardPage;
+export default AdminDashboardPage;

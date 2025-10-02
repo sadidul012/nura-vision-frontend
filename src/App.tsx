@@ -10,7 +10,9 @@ import EnrollPage from "./pages/demo/enroll/EnrollPage";
 import VerifyPage from "./pages/demo/verify/VerifyPage";
 import LoginPage from "./pages/login/LoginPage";
 import RegisterPage from "./pages/register/RegisterPage";
-import DashboardPage from "./pages/dashboard/DashboardPage";
+// import AdminDashboardPage from "./pages/dashboard/admin/AdminDashboardPage";
+import UserDashboardPage from "./pages/dashboard/user/UserDashboardPage";
+
 
 function App() {
     return (
@@ -26,7 +28,8 @@ function App() {
                     <Route path="/demo/verify" element={<VerifyPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/register" element={<RegisterPage/>}/>
-                    <Route path="/dashboard" element={<DashboardPage/>}/>
+                    {/*<Route path="/dashboard" element={<AdminDashboardPage/>}/>*/}
+                    <Route path="/dashboard" element={<UserDashboardPage/>}/>
                 </Routes>
             </div>
         </Router>
