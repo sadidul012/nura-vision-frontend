@@ -12,8 +12,10 @@ import LoginPage from "./pages/login/LoginPage";
 import RegisterPage from "./pages/register/RegisterPage";
 // import AdminDashboardPage from "./pages/dashboard/admin/AdminDashboardPage";
 import UserDashboardPage from "./pages/dashboard/user/UserDashboardPage";
-import {ToastProvider} from "./pages/components/common/ToastProvider";
-import PageWrapper from "./pages/components/common/PageWrapper";
+import {ToastProvider} from "./pages/components/ToastProvider";
+import PageWrapper from "./pages/components/PageWrapper";
+import ProfilePage from "./pages/profile/ProfilePage";
+import PaymentPage from "./pages/payment/PaymentPage";
 
 
 function App() {
@@ -72,6 +74,16 @@ function App() {
                         <Route path="/dashboard" element={
                             <PageWrapper title={"Dashboard | NuraVision"}>
                                 <UserDashboardPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/profile" element={
+                            <PageWrapper title={"Profile | NuraVision"}>
+                                <ProfilePage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/payment" element={
+                            <PageWrapper title={"Payment | NuraVision"}>
+                                <PaymentPage/>
                             </PageWrapper>
                         }/>
                     </Routes>

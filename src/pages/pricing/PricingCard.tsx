@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import {Button, Card, Col, Row} from "react-bootstrap";
 import PricingToggle from "./PricingToggle";
+import {useNavigate} from "react-router-dom";
 
 const PricingCard: React.FC = () => {
     const [yearly, setYearly] = useState(false);
+    const navigate = useNavigate();
 
     const plans = [
         {
@@ -11,6 +13,7 @@ const PricingCard: React.FC = () => {
             price: "$0",
             features: ["100 API calls", "Community support"],
             button: "Get Started",
+            link: "/register",
             highlight: false
         },
         {
@@ -18,6 +21,7 @@ const PricingCard: React.FC = () => {
             price: yearly ? "480/year" : "49/mo",
             features: ["10k API calls", "Email support"],
             button: "Subscribe",
+            link: "/payment",
             highlight: true
         },
         {
@@ -25,6 +29,7 @@ const PricingCard: React.FC = () => {
             price: "Custom",
             features: ["Unlimited calls", "Dedicated support"],
             button: "Contact Us",
+            link: "/contact",
             highlight: false
         },
     ];
@@ -43,7 +48,7 @@ const PricingCard: React.FC = () => {
                                 <ul className="list-unstyled mb-4">
                                     {plan.features.map((f, i) => <li key={i}>{f}</li>)}
                                 </ul>
-                                <Button variant={plan.highlight ? "primary" : "outline-primary"}>{plan.button}</Button>
+                                <Button onClick={() => navigate(plan.link)} variant={plan.highlight ? "primary" : "outline-primary"}>{plan.button}</Button>
                             </Card.Body>
                         </Card>
                     </Col>

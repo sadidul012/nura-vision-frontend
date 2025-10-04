@@ -16,6 +16,7 @@ const MainMenu: React.FC = () => {
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                        <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                         <Nav.Link as={Link} to="/features">Features</Nav.Link>
                         <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>

@@ -15,7 +15,7 @@ import {
     ArcElement,
 } from "chart.js";
 import AddApiKeyModal from "./AddApiKeyModal";
-import {useToast} from "../../components/common/ToastProvider";
+import {useToast} from "../../components/ToastProvider";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
