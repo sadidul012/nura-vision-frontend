@@ -12,25 +12,70 @@ import LoginPage from "./pages/login/LoginPage";
 import RegisterPage from "./pages/register/RegisterPage";
 // import AdminDashboardPage from "./pages/dashboard/admin/AdminDashboardPage";
 import UserDashboardPage from "./pages/dashboard/user/UserDashboardPage";
+import {ToastProvider} from "./pages/components/common/ToastProvider";
+import PageWrapper from "./pages/components/common/PageWrapper";
 
 
 function App() {
     return (
+
         <Router>
             <div className="app-wrapper">
-                <Routes>
-                    <Route path="/" element={<HomePage/>}/>
-                    <Route path="/features" element={<FeaturesPage/>}/>
-                    <Route path="/pricing" element={<PricingPage/>}/>
-                    <Route path="/contact" element={<ContactPage/>}/>
-                    <Route path="/demo" element={<DemoPage/>}/>
-                    <Route path="/demo/enroll" element={<EnrollPage/>}/>
-                    <Route path="/demo/verify" element={<VerifyPage/>}/>
-                    <Route path="/login" element={<LoginPage/>}/>
-                    <Route path="/register" element={<RegisterPage/>}/>
-                    {/*<Route path="/dashboard" element={<AdminDashboardPage/>}/>*/}
-                    <Route path="/dashboard" element={<UserDashboardPage/>}/>
-                </Routes>
+                <ToastProvider>
+                    <Routes>
+                        <Route path="/" element={
+                            <PageWrapper title={"Home | NuraVision"}>
+                                <HomePage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/features" element={
+                            <PageWrapper title={"Features | NuraVision"}>
+                                <FeaturesPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/pricing" element={
+                            <PageWrapper title={"Pricing | NuraVision"}>
+                                <PricingPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/contact" element={
+                            <PageWrapper title={"Contact | NuraVision"}>
+                                <ContactPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/demo" element={
+                            <PageWrapper title={"Demo | NuraVision"}>
+                                <DemoPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/demo/enroll" element={
+                            <PageWrapper title={"Enrollment Demo | NuraVision"}>
+                                <EnrollPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/demo/verify" element={
+                            <PageWrapper title={"Verification Demo | NuraVision"}>
+                                <VerifyPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/login" element={
+                            <PageWrapper title={"User Login | NuraVision"}>
+                                <LoginPage/>
+                            </PageWrapper>
+                        }/>
+                        <Route path="/register" element={
+                            <PageWrapper title={"User Register | NuraVision"}>
+                                <RegisterPage/>
+                            </PageWrapper>
+                        }/>
+                        {/*<Route path="/dashboard" element={<AdminDashboardPage/>}/>*/}
+                        <Route path="/dashboard" element={
+                            <PageWrapper title={"Dashboard | NuraVision"}>
+                                <UserDashboardPage/>
+                            </PageWrapper>
+                        }/>
+                    </Routes>
+                </ToastProvider>
             </div>
         </Router>
     );

@@ -15,6 +15,7 @@ import {
     ArcElement,
 } from "chart.js";
 import AddApiKeyModal from "./AddApiKeyModal";
+import {useToast} from "../../components/common/ToastProvider";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
@@ -29,15 +30,17 @@ const APIKeyTable: React.FC = () => {
     const [showRevoke, setShowRevoke] = useState(false);
     const [selectedKey, setSelectedKey] = useState<string | null>(null);
 
+    const { showToast } = useToast();
+
     const handleRevokeKey = (apiKey: string) => {
         // Remove key from list
         setApiKeys(apiKeys.filter((k) => k.key !== apiKey));
-        console.log("Revoked:", apiKey);
+        showToast(`API Key ${apiKey} revoked!`, "danger");
     };
 
     const handleCopy = (apiKey: string) => {
         navigator.clipboard.writeText(apiKey);
-        alert("API Key copied to clipboard!");
+        showToast("API Key copied to clipboard!", "success");
     };
 
     const [showModal, setShowModal] = useState(false);
