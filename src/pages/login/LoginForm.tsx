@@ -1,19 +1,26 @@
-// SocialWalletLogin.tsx
 import React from "react";
 import {Card, Button} from "react-bootstrap";
 import {FaGoogle, FaGithub} from "react-icons/fa";
 import {SiSolana, SiAlgorand} from "react-icons/si";
+import {useAuth} from "../../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 const LoginForm: React.FC = () => {
+    const {login} = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogin = (role: "user" | "admin") => {
+        login(role);
+        navigate("/dashboard");
+    };
+
     // ---- Social Auth Handlers ----
     const handleGoogleLogin = () => {
-        // integrate Firebase / Supabase / NextAuth for Google
-        alert("Login with Google clicked (demo)");
+        handleLogin("user")
     };
 
     const handleGithubLogin = () => {
-        // integrate Firebase / Supabase / NextAuth for GitHub
-        alert("Login with GitHub clicked (demo)");
+        handleLogin("admin")
     };
 
     // ---- Wallet Auth Handlers ----
