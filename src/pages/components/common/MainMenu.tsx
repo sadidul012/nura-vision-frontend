@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import logo from '../../../logo.svg';
-import {Navbar as BSNavbar, Nav, Container} from 'react-bootstrap';
+import {Navbar as BSNavbar, Nav, Container, Button} from 'react-bootstrap';
 import {useAuth} from "../../../context/AuthContext";
 
 const MainMenu: React.FC = () => {
@@ -36,16 +36,16 @@ const MainMenu: React.FC = () => {
 
                         {user && (
                             <>
-                                <button className="btn btn-outline-danger" onClick={logout}>
+                                <Button className="btn btn-outline-danger" onClick={logout}>
                                     Logout
-                                </button>
+                                </Button>
                             </>
                         )}
 
                         {!user && (
                             <>
                                 <li className="nav-item me-2">
-                                    <Nav.Link as={Link} className="btn btn-outline-light btn-sm" to="/login">
+                                    <Nav.Link as={Link} className="btn btn-success btn-sm" to="/login">
                                         Login
                                     </Nav.Link>
                                 </li>
