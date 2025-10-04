@@ -2,6 +2,8 @@ import React from "react";
 import {Container, Row, Col, Card, ProgressBar} from "react-bootstrap";
 import {FaDollarSign, FaChartBar} from "react-icons/fa";
 import {Line} from "react-chartjs-2";
+import { FaCoins } from "react-icons/fa";
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -62,7 +64,13 @@ const UserDashboardContent: React.FC = () => {
                                 <FaDollarSign size={30} className="text-success"/>
                             }
                             <h5 className="mt-2">Current Balance</h5>
-                            <h3>$123.45</h3>
+                            <h3>
+                                {
+                                    // @ts-ignore
+                                    <FaCoins size={24} style={{marginTop: -5}} color="#FFD700" className={"me-2"}/>
+                                }
+                                123.45
+                            </h3>
                             <small className="text-muted">Updated 5 mins ago</small>
                         </Card.Body>
                     </Card>
@@ -85,13 +93,18 @@ const UserDashboardContent: React.FC = () => {
                 <Col md={4}>
                     <Card className="shadow-sm">
                         <Card.Body>
-
                             {
                                 // @ts-ignore
                                 <FaChartBar size={30} className="text-warning"/>
                             }
                             <h5 className="mt-2">Cost (Today)</h5>
-                            <h3>$12.50</h3>
+                            <h3>
+                                {
+                                    // @ts-ignore
+                                    <FaCoins size={24} style={{marginTop: -5}} color="#FFD700" className={"me-2"}/>
+                                }
+                                12.50
+                            </h3>
                             <small className="text-muted">Estimated billing</small>
                         </Card.Body>
                     </Card>
@@ -99,7 +112,7 @@ const UserDashboardContent: React.FC = () => {
             </Row>
 
             {/* API Keys Table */}
-            <APIKeyTable />
+            <APIKeyTable/>
 
             {/* Usage Chart */
             }
