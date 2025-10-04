@@ -12,7 +12,7 @@ const PricingPage: React.FC = () => {
             <div className="app-content">
                 <MainMenu/>
                 <PricingHeader/>
-                <div className="container py-5">
+                <div className="container pb-4">
                     <PricingCard/>
                     <WhyChooseUs/>
                     <FAQ/>

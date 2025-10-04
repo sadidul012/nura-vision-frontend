@@ -9,7 +9,7 @@ const PricingToggle: React.FC<PricingToggleProps> = ({ yearly, setYearly }) => {
   return (
     <div className="text-center mb-4">
       <div className="form-check form-switch d-inline-flex align-items-center gap-2">
-        <label className="form-check-label m-5">Monthly</label>
+        <label className="form-check-label mx-5">Monthly</label>
         <input
           className="form-check-input"
           type="checkbox"

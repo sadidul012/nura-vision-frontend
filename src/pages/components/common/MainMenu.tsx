@@ -1,10 +1,11 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from '../../../logo.svg';
 import {Navbar as BSNavbar, Nav, Container, Button} from 'react-bootstrap';
 import {useAuth} from "../../../context/AuthContext";
 
 const MainMenu: React.FC = () => {
+    const navigate = useNavigate();
     const {user, logout} = useAuth();
 
     return (
@@ -36,7 +37,7 @@ const MainMenu: React.FC = () => {
 
                         {user && (
                             <>
-                                <Button className="btn btn-outline-danger" onClick={logout}>
+                                <Button variant={"outline-danger"} onClick={logout}>
                                     Logout
                                 </Button>
                             </>
@@ -44,16 +45,12 @@ const MainMenu: React.FC = () => {
 
                         {!user && (
                             <>
-                                <li className="nav-item me-2">
-                                    <Nav.Link as={Link} className="btn btn-success btn-sm" to="/login">
-                                        Login
-                                    </Nav.Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Nav.Link as={Link} className="btn btn-primary btn-sm" to="/register">
-                                        Register
-                                    </Nav.Link>
-                                </li>
+                                <Button variant={"outline-secondary"} className={"ms-2"} onClick={() => navigate("/login")}>
+                                    Login
+                                </Button>
+                                <Button variant={"outline-primary"} className={"ms-2"} onClick={() => navigate("/register")}>
+                                    Register
+                                </Button>
                             </>
                         )}
 
